@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">UIDemo</string>
+    <string name="hslu_mobile_programming_title">HSLU - Mobile Programming</string>
+    <string name="subtitle_main">Willkommen zum zweiten Kursblock!</string>
+    <string name="rbLinearLayout">LinearLayout</string>
+    <string name="rbVerticalLayout">VerticalLayout</string>
 </resources>

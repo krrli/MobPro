@@ -20,10 +20,23 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/txtAppPref"
+                style="@style/MainSectionHeader"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/MainSectionHeader"
                 android:text="@string/appPref_title" />
+
+            <TextView
+                android:id="@+id/txtResumeText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="txtCounterText"/>
+
+            <!--TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/appPref_counterText"/-->
 
             <TextView
                 android:layout_width="match_parent"

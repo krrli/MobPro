@@ -4,4 +4,5 @@
     <string name="filesystem_title">Dateisystem</string>
     <string name="SQLite_title">SQLite</string>
     <string name="ContProvider_title">Content Provider</string>
+    <string name="appPref_counterText">MainActivity.onResume() wurde seit der Installation dieser App %1$s mal aufgerufen. Juhuu.</string>
 </resources>

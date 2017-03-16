@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Persistenz</string>
+    <string name="appPref_title">Application-Preferences</string>
+    <string name="filesystem_title">Dateisystem</string>
+    <string name="SQLite_title">SQLite</string>
+    <string name="ContProvider_title">Content Provider</string>
+</resources>

@@ -5,4 +5,15 @@
     <string name="SQLite_title">SQLite</string>
     <string name="ContProvider_title">Content Provider</string>
     <string name="appPref_counterText">MainActivity.onResume() wurde seit der Installation dieser App %1$s mal aufgerufen. Juhuu.</string>
+    <string name="editTeaPreferences">Tea-Prefs editieren</string>
+    <string name="setDefaultTeaPreferences">Tea-Prefs default setzen</string>
+    <string name="teaPreferences">Tee Präferenzen</string>
+    <string name="teaPreferencesSummary">Wetsch denn du gsüesste Tee?</string>
+    <string name="teaPreferencesTitle">Präferenzierter Tee</string>
+    <string name="teaPreferencesSweetenerSummary">Mit was wetsch denn du de Tee süesse?</string>
+    <string name="teaPreferencesSweetenerTitle">Womit soll der Tee gesüsst werden?</string>
+    <string name="teaPreferencesPreferredTeaExample">z.B. "Hopfätee"</string>
+    <string name="teaPreferencesPreferredTeaTitle">Bevorzugte Marke/Sorte</string>
+    <string name="teaPrefsSummary">Ich trinke am liebsten %1$s</string>
+    <string name="teaPrefsWithSweetenerSummary">, mit %1$s gesüsst.</string>
 </resources>

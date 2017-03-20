@@ -10,6 +10,7 @@
             android:title="@string/teaPreferencesTitle"/>
 
         <ListPreference
+            android:id="@+id/lpTeaPref"
             android:dependency="teaWithSugar"
             android:entries="@array/teaSweetener"
             android:entryValues="@array/teaSweetenerValues"

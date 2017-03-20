@@ -4,8 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -51,19 +53,42 @@ public class MainActivity extends Activity {
                 final SharedPreferences.Editor teaPrefEditor = PreferenceManager.getDefaultSharedPreferences(MainActivity.this).edit();
 
                 String teaPref = "Ginger from se root";
-                String sweetenerPref = "Honig";
+                String sweetenerPref = "natural";
 
                 teaPrefEditor.putString("teaPreferred", teaPref);
-                teaPrefEditor.putString("teaSweetener",sweetenerPref);
+                teaPrefEditor.putString("teaSweetener", sweetenerPref);
                 teaPrefEditor.putBoolean("teaWithSugar", true);
+                teaPrefEditor.apply();
+
+                String sweetenerPrefText = translateSweetenerValuesIntoText(sweetenerPref);
 
                 String textSummaryPt = String.format(getResources().getString(R.string.teaPrefsSummary), teaPref);
-                textSummaryPt =  textSummaryPt + String.format(getResources().getString(R.string.teaPrefsWithSweetenerSummary), sweetenerPref);
+                textSummaryPt =  textSummaryPt + String.format(getResources().getString(R.string.teaPrefsWithSweetenerSummary), sweetenerPrefText);
                 txtTeaPrefsSummary.setText(textSummaryPt);
             }
         });
 
     }
+
+    private String translateSweetenerValuesIntoText(String value){
+
+        String[] sweetenerValues = getResources().getStringArray(R.array.teaSweetenerValues);
+        String[] sweetenerText = getResources().getStringArray(R.array.teaSweetener);
+
+        if(sweetenerValues.length != sweetenerText.length){
+            return value;
+        }
+
+        for(int i = 0; i < sweetenerValues.length; i++){
+            if(sweetenerValues[i].equals(value)){
+                return sweetenerText[i];
+            }
+        }
+
+        return value;
+
+    }
+
 
     private void readTeaPreferences(){
 
@@ -99,7 +124,9 @@ public class MainActivity extends Activity {
 
         String textSummaryPt = String.format(getResources().getString(R.string.teaPrefsSummary), lieblingstee);
         if(teaWithSugar){
-            textSummaryPt =  textSummaryPt + String.format(getResources().getString(R.string.teaPrefsWithSweetenerSummary), suesstoff);
+
+            String suessstoffText = translateSweetenerValuesIntoText(suesstoff);
+            textSummaryPt =  textSummaryPt + String.format(getResources().getString(R.string.teaPrefsWithSweetenerSummary), suessstoffText);
         }
 
         txtTeaPrefsSummary.setText(textSummaryPt);

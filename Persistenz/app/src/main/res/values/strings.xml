@@ -16,4 +16,8 @@
     <string name="teaPreferencesPreferredTeaTitle">Bevorzugte Marke/Sorte</string>
     <string name="teaPrefsSummary">Ich trinke am liebsten %1$s</string>
     <string name="teaPrefsWithSweetenerSummary">, mit %1$s gesüsst.</string>
+    <string name="useExternalStorage">Externen Speicher benutzen</string>
+    <string name="btnSave">Speichern</string>
+    <string name="btnLoad">Laden</string>
+    <string name="extStorageIsMounted">External Storage is mounted (writable)</string>
 </resources>

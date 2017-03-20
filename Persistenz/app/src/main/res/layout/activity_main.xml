@@ -57,6 +57,57 @@
                 style="@style/MainSectionHeader"
                 android:text="@string/filesystem_title" />
 
+            <CheckBox
+                android:id="@+id/cbExternerSpeicher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/useExternalStorage" />
+
+            <TextView
+                android:id="@+id/lblExtStorage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="35dp"
+                android:paddingBottom="20dp"
+                android:text="@string/extStorageIsMounted" />
+
+            <TextView
+                android:id="@+id/lblTextFileContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"/>
+
+            <EditText
+                android:id="@+id/editedTxtFileText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType=""
+                android:text="" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <Button
+                    android:id="@+id/btnSave"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/btnSave"
+                    android:background="@android:color/transparent"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:id="@+id/btnLoad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/btnLoad"
+                    android:background="@android:color/transparent"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

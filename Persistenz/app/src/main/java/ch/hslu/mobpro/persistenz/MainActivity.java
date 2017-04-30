@@ -10,6 +10,8 @@ import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -26,6 +28,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 import permissions.dispatcher.NeedsPermission;
 import permissions.dispatcher.OnNeverAskAgain;
@@ -35,7 +38,7 @@ import permissions.dispatcher.PermissionRequest;
 import permissions.dispatcher.RuntimePermissions;
 
 @RuntimePermissions
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     private int resumeCount;
     private SharedPreferences sharedPreferences;
@@ -50,6 +53,8 @@ public class MainActivity extends Activity {
     private TextView lblExtStorage;
     private final String filename = "InternalFile";
     private EditText editedTxtFileText;
+    private Button btnShowNotice;
+    private Button btnCreateNotice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,9 +71,19 @@ public class MainActivity extends Activity {
         lblTextFileContent = (TextView) findViewById(R.id.lblTextFileContent);
         editedTxtFileText = (EditText) findViewById(R.id.editedTxtFileText);
         lblExtStorage = (TextView) findViewById(R.id.lblExtStorage);
+        btnShowNotice = (Button) findViewById(R.id.btnShowNotice);
+        btnCreateNotice = (Button) findViewById(R.id.btnCreateNotice);
 
         sharedPreferences = getPreferences(MODE_PRIVATE);
         resumeCount = sharedPreferences.getInt("CounterAppPref",0);
+
+        if (isExternalStorageWriteable())
+            lblExtStorage.setText("External storage is mounted (writable)");
+        else if (isExternalStorageReadable())
+            lblExtStorage.setText("External storage is mounted (readable)");
+        else
+            lblExtStorage.setText("External storage is not mounted");
+
 
         btnTeaPrefEdit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,34 +92,34 @@ public class MainActivity extends Activity {
                 startActivity(prefIntent);
             }
         });
-
         btnSetDefaultPreferences.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View v){
-                defaultPreferences();
+            public void onClick(View v){defaultPreferences();
             }
         });
-
-        if (isExternalStorageWriteable())
-            lblExtStorage.setText("External storage is mounted (writable)");
-        else if (isExternalStorageReadable())
-            lblExtStorage.setText("External storage is mounted (readable)");
-        else
-            lblExtStorage.setText("External storage is not mounted");
-        
-
         btnSave.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 saveFile();
             }
         });
-
         btnLoad.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View v){
-
-                readFile();
+            public void onClick(View v){readFile();
+            }
+        });
+        btnShowNotice.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Toast.makeText(MainActivity.this, "Zeig mol die verreckti Notiz!", Toast.LENGTH_SHORT).show();
+            }
+        });
+        btnCreateNotice.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Toast.makeText(MainActivity.this, "E gueti Notiz erstelle, hopp hopp!", Toast.LENGTH_SHORT).show();
+                Intent createNoticeIntent = new Intent(MainActivity.this,NoteActivity.class);
+                startActivity(createNoticeIntent);
             }
         });
 
@@ -165,7 +180,7 @@ public class MainActivity extends Activity {
         return "";
     }
 
-    public boolean isExternalStorageReadable() {
+    private boolean isExternalStorageReadable() {
         String state = Environment.getExternalStorageState();
         if (Environment.MEDIA_MOUNTED.equals(state) ||
                 Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
@@ -174,7 +189,7 @@ public class MainActivity extends Activity {
         return false;
     }
 
-    public boolean isExternalStorageWriteable() {
+    private boolean isExternalStorageWriteable() {
         String state = Environment.getExternalStorageState();
         if (Environment.MEDIA_MOUNTED.equals(state)) {
             return true;
@@ -212,22 +227,15 @@ public class MainActivity extends Activity {
     }
 
     private String translateSweetenerValuesIntoText(String value){
-
         String[] sweetenerValues = getResources().getStringArray(R.array.teaSweetenerValues);
         String[] sweetenerText = getResources().getStringArray(R.array.teaSweetener);
 
-        if(sweetenerValues.length != sweetenerText.length){
+        if(sweetenerText.length != sweetenerValues.length){
             return value;
         }
 
-        for(int i = 0; i < sweetenerValues.length; i++){
-            if(sweetenerValues[i].equals(value)){
-                return sweetenerText[i];
-            }
-        }
-
-        return value;
-
+        int deOrtVomTextli = Arrays.asList(sweetenerValues).indexOf(value);
+        return sweetenerText[deOrtVomTextli];
     }
 
     @Override

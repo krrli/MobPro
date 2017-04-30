@@ -1,124 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="ch.hslu.mobpro.persistenz.MainActivity">
 
-    <ScrollView
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <TextView
+            android:id="@+id/txtAppPref"
+            style="@style/MainSectionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/appPref_title" />
+
+        <TextView
+            android:id="@+id/txtResumeText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="txtCounterText" />
+
+        <TextView
+            android:id="@+id/txtTeaPrefSummary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp" />
+
+        <Button
+            android:id="@+id/btnEditPreferences"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/editTeaPreferences" />
+
+        <Button
+            android:id="@+id/btnSetPreferences"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/setDefaultTeaPreferences" />
+
+        <TextView
+            style="@style/MainSectionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/filesystem_title" />
+
+        <CheckBox
+            android:id="@+id/cbExternerSpeicher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/useExternalStorage" />
+
+        <TextView
+            android:id="@+id/lblExtStorage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
+            android:paddingLeft="35dp"
+            android:text="@string/extStorageIsMounted" />
+
+        <TextView
+            android:id="@+id/lblTextFileContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp" />
+
+        <EditText
+            android:id="@+id/editedTxtFileText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType=""
+            android:text="" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/txtAppPref"
-                style="@style/MainSectionHeader"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/appPref_title" />
-
-            <TextView
-                android:id="@+id/txtResumeText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="txtCounterText"/>
-
-            <TextView
-                android:id="@+id/txtTeaPrefSummary"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"/>
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
 
             <Button
-                android:id="@+id/btnEditPreferences"
+                android:id="@+id/btnSave"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/editTeaPreferences" />
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:text="@string/btnSave" />
 
             <Button
-                android:id="@+id/btnSetPreferences"
+                android:id="@+id/btnLoad"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/setDefaultTeaPreferences" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/MainSectionHeader"
-                android:text="@string/filesystem_title" />
-
-            <CheckBox
-                android:id="@+id/cbExternerSpeicher"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/useExternalStorage" />
-
-            <TextView
-                android:id="@+id/lblExtStorage"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="35dp"
-                android:paddingBottom="20dp"
-                android:text="@string/extStorageIsMounted" />
-
-            <TextView
-                android:id="@+id/lblTextFileContent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="5dp"/>
-
-            <EditText
-                android:id="@+id/editedTxtFileText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType=""
-                android:text="" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <Button
-                    android:id="@+id/btnSave"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/btnSave"
-                    android:background="@android:color/transparent"
-                    android:layout_weight="1"/>
-
-                <Button
-                    android:id="@+id/btnLoad"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/btnLoad"
-                    android:background="@android:color/transparent"
-                    android:layout_weight="1"/>
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/MainSectionHeader"
-                android:text="@string/SQLite_title" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/MainSectionHeader"
-                android:text="@string/ContProvider_title" />
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:text="@string/btnLoad" />
         </LinearLayout>
-    </ScrollView>
-</RelativeLayout>
+
+        <TextView
+            style="@style/MainSectionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/SQLite_title" />
+
+        <Button
+            android:id="@+id/btnCreateNotice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btnCreateNotice"/>
+
+        <Button
+            android:id="@+id/btnShowNotice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btnShowNotice"/>
+
+        <TextView
+            style="@style/MainSectionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ContProvider_title" />
+    </LinearLayout>
+</ScrollView>

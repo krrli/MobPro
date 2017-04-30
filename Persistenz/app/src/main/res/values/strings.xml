@@ -20,4 +20,6 @@
     <string name="btnSave">Speichern</string>
     <string name="btnLoad">Laden</string>
     <string name="extStorageIsMounted">External Storage is mounted (writable)</string>
+    <string name="btnCreateNotice">Notiz erzeugen</string>
+    <string name="btnShowNotice">Notiz zeigen</string>
 </resources>

@@ -3,9 +3,10 @@ package ch.hslu.mobpro.persistenz;
 import android.app.Activity;
 import android.preference.PreferenceFragment;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 // import android.R;
 
-public class TeaPreferenceActivity extends Activity {
+public class TeaPreferenceActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

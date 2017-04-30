@@ -7,6 +7,9 @@
     <link rel="stylesheet" type="text/css" href="css/vendor/index.css">
     <link rel="stylesheet" type="text/css" href="css/vendor/jquery-1.5.0.mobile.min.css">
     <link rel="stylesheet" type="text/css" href="css/movies.css">
+    <script type="text/javascript" src="js/vendor/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/vendorjquery-1.5.0.mobile.min.js"></script>
+    <script type="text/javascript" src="js/movies.js"></script>
 </head>
 <body>
 <div data-role="page" id="page-main" data-title="My Movies">
@@ -59,11 +62,11 @@
     <div role="main" class="ui-content">
         <div data-role="content">
             <div class="myformdiv">
-                <label for="txtTitle">What Movie are you looking for?</label>
+                <label for="txtTitle">Wasfürne Film suechsch?</label>
                 <input type="text" id="txtSearch" value="">
             </div>
             <div class="myformdiv">
-                <button class="ui-btn ui-icon-search ui-btn-icon-left" id="btnSearch">Search</button>
+                <button class="ui-btn ui-icon-search ui-btn-icon-left" id="btnMovieSearch" onclick="showMovies()">Suchen</button>
             </div>
             <div class="myformdiv" id="searchErrorText" style="display:none">
                 <span style="color:#ff0000">Movie not found!</span>

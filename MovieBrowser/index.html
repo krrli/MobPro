@@ -4,21 +4,121 @@
     <meta charset="UTF-8">
     <title>hoi</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/vendor/jquery.mobile-1.4.5.min.css" />
-    <script scr="vendor/jquery-3.2.1.js"></script>
-    <script scr="vendor/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/vendor/index.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor/jquery-1.5.0.mobile.min.css">
+    <link rel="stylesheet" type="text/css" href="css/movies.css">
 </head>
 <body>
-    <div id="bla" data-role="page">
-        <div data-role="header">
-            <h2>My Movies</h2>
-        </div>
+<div data-role="page" id="page-main" data-title="My Movies">
+
+    <div data-role="header">
+        <h1><b>My Movies</b></h1>
+    </div>
+
+    <div role="main" class="ui-content">
         <div data-role="content">
-            Movie-App, yeah.
-        </div>
-        <div data-role="footer">
-            <h4>(c) 2016 AcmeMovies.com</h4>
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#favouriteMovies">Meine Lieblingsfilme</a></li>
+                <li><a href="#searchForMovies">Film suchen</a></li>
+            </ul>
         </div>
     </div>
+
+    <div data-role="footer">
+        <h6>&copy; 2017 by krrli</h6>
+    </div>
+</div>
+<div data-role="page" id="favouriteMovies" data-title="My Movies" data-add-back-btn="true">
+
+    <div data-role="header">
+        <h1><b>Meine Lieblingsfilme</b></h1>
+    </div>
+
+    <div role="main" class="ui-content">
+        <div data-role="content">
+            <ul data-role="listview" data-inset="true" id=favList>
+                <li><a href="#page-movie">Film 1</a></li>
+                <li><a href="#page-movie">Film 2</a></li>
+                <li><a href="#page-movie">Film 3</a></li>
+            </ul>
+        </div>
+        <p><a href="#page-main">Back</a></p>
+    </div>
+
+    <div data-role="footer">
+        <h6>&copy; 2017 by krrli</h6>
+    </div>
+</div>
+
+<div data-role="page" id="searchForMovies" data-title="My Movies" data-add-back-btn="true">
+
+    <div data-role="header">
+        <h1><b>Film suchen</b></h1>
+    </div>
+
+    <div role="main" class="ui-content">
+        <div data-role="content">
+            <div class="myformdiv">
+                <label for="txtTitle">What Movie are you looking for?</label>
+                <input type="text" id="txtSearch" value="">
+            </div>
+            <div class="myformdiv">
+                <button class="ui-btn ui-icon-search ui-btn-icon-left" id="btnSearch">Search</button>
+            </div>
+            <div class="myformdiv" id="searchErrorText" style="display:none">
+                <span style="color:#ff0000">Movie not found!</span>
+            </div>
+            <p><a href="#page-main">Back</a></p>
+        </div>
+    </div>
+
+    <div data-role="footer">
+        <h6>&copy; 2017 by krrli</h6>
+    </div>
+</div>
+
+<div data-role="page" id="page-movie" data-title="My Movies" data-add-back-btn="true">
+
+    <div data-role="header">
+        <h1><b>Schweinchen Babe</b></h1>
+    </div>
+
+    <div role="main" class="ui-content">
+        <div data-role="content">
+            <div class="myformdiv">
+                <label for="txtTitle">Title</label>
+                <input type="text" id="txtTitle" value="Meerschweinchen Babe">
+            </div>
+            <div class="myformdiv">
+                <label for="txtYear">Year</label>
+                <input type="text" id="txtYear" value="1995">
+            </div>
+            <div class="myformdiv">
+                <label for="txtActors">Actors</label>
+                <textarea id="txtActors" Meerschweinchen Babe></textarea>
+            </div>
+            <div class="myformdiv">
+                <label for="txtPlot">Plot</label>
+                <textarea id="txtPlot">Nachdem das kleine Schweinchen Babe seine Eltern durch den Schlachter verloren hat, landet es auf dem Bauernhof des schweigsamen Arthur Hoggett und dessen Frau Esme. Alles wird gut, happy blubbsi blabbsi</textarea>
+            </div>
+            <div class="myformdiv">
+                <label for="txtRating">Rating</label>
+                <input type="text" id="txtRating" value="10.0">
+            </div>
+            <div class="myformdiv">
+                <label for="imgPoster">Poster</label>
+                <br/><br/>
+                <img id="imgPoster"
+                     src="https://images-na.ssl-images-amazon.com/images/I/91OKgB9qhVL._SY445_.jpg"
+                     alt="">
+            </div>
+            <p><a href="#favouriteMovies">Back</a></p>
+        </div>
+    </div>
+
+    <div data-role="footer">
+        <h6>&copy; 2017 by krrli</h6>
+    </div>
+</div>
 </body>
 </html>

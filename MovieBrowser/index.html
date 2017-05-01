@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <title>hoi</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/vendor/index.css">
-    <link rel="stylesheet" type="text/css" href="css/vendor/jquery-1.5.0.mobile.min.css">
-    <link rel="stylesheet" type="text/css" href="css/movies.css">
-    <script type="text/javascript" src="js/vendor/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="js/vendorjquery-1.5.0.mobile.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" src="js/movies.js"></script>
 </head>
 <body>
@@ -21,19 +19,19 @@
     <div role="main" class="ui-content">
         <div data-role="content">
             <ul data-role="listview" data-inset="true">
-                <li><a href="#favouriteMovies">Meine Lieblingsfilme</a></li>
+                <li><a href="#favouriteMovies">Lieblingsmovies</a></li>
                 <li><a href="#searchForMovies">Film suchen</a></li>
             </ul>
         </div>
     </div>
 
-    <div data-role="footer">
+    <div data-role="footer" data-position="fixed">
         <h6>&copy; 2017 by krrli</h6>
     </div>
 </div>
-<div data-role="page" id="favouriteMovies" data-title="My Movies" data-add-back-btn="true">
+<div data-role="page" id="favouriteMovies" data-title="My Movies">
 
-    <div data-role="header">
+    <div data-role="header" data-add-back-btn="true">
         <h1><b>Meine Lieblingsfilme</b></h1>
     </div>
 
@@ -45,17 +43,16 @@
                 <li><a href="#page-movie">Film 3</a></li>
             </ul>
         </div>
-        <p><a href="#page-main">Back</a></p>
     </div>
 
-    <div data-role="footer">
+    <div data-role="footer" data-position="fixed">
         <h6>&copy; 2017 by krrli</h6>
     </div>
 </div>
 
-<div data-role="page" id="searchForMovies" data-title="My Movies" data-add-back-btn="true">
+<div data-role="page" id="searchForMovies" data-title="My Movies">
 
-    <div data-role="header">
+    <div data-role="header" data-add-back-btn="true">
         <h1><b>Film suchen</b></h1>
     </div>
 
@@ -71,19 +68,18 @@
             <div class="myformdiv" id="searchErrorText" style="display:none">
                 <span style="color:#ff0000">Movie not found!</span>
             </div>
-            <p><a href="#page-main">Back</a></p>
         </div>
     </div>
 
-    <div data-role="footer">
+    <div data-role="footer" data-position="fixed">
         <h6>&copy; 2017 by krrli</h6>
     </div>
 </div>
 
-<div data-role="page" id="page-movie" data-title="My Movies" data-add-back-btn="true">
+<div data-role="page" id="page-movie" data-title="My Movies">
 
-    <div data-role="header">
-        <h1><b>Schweinchen Babe</b></h1>
+    <div data-role="header" data-add-back-btn="true">
+        <h1><b>Movie</b></h1>
     </div>
 
     <div role="main" class="ui-content">
@@ -115,11 +111,10 @@
                      src="https://images-na.ssl-images-amazon.com/images/I/91OKgB9qhVL._SY445_.jpg"
                      alt="">
             </div>
-            <p><a href="#favouriteMovies">Back</a></p>
         </div>
     </div>
 
-    <div data-role="footer">
+    <div data-role="footer" data-position="fixed">
         <h6>&copy; 2017 by krrli</h6>
     </div>
 </div>
